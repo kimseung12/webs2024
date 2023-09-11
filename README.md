@@ -15,5 +15,5 @@ https://kimseung12.github.io/webs2024/layout
 https://kimseung12.github.io/webs2024/sql
 
 ## SITE
-웹표준을 준수한 사이트를 제작합니다.
+웹표준을 준수한 사이트를 제작합니다..
 https://kimseung12.github.io/webs2024/site
