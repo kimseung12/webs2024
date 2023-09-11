@@ -1,0 +1,52 @@
+<script>
+        // 문제 정보
+        const infoDate = "2021년 10월";
+        const infoType = "정보처리 기능사";
+        const infoNum = "1";
+        const infoQuestion = "CPU의 정보처리 속도 단위 중 초당 100만 개의 연산을 수행한다는 의미의 단위는?";
+        const infoAnswer = "MIPS";
+        const infoDesc = "LIPS는 초당 1개, KIPS는 초당 1000개, MIPS는 초당 1000000의 연산을 수행하는 것을 의미합니다.";
+
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizDate = quizWrap.querySelector(".quiz__date");
+        const quizType = quizWrap.querySelector(".quiz__type");
+        const quizNum = quizWrap.querySelector(".quiz__question em");
+        const quizQuestion = quizWrap.querySelector(".quiz__question span");
+        const quizAnswer = quizWrap.querySelector(".quiz__answer");
+        const quizDesc = quizWrap.querySelector(".quiz__desc");
+        const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+        const quizInput = quizWrap.querySelector(".quiz__input input");
+        const quizAnimation = quizWrap.querySelector(".quiz__animation");
+
+        // 문제 출력
+        quizDate.innerText = infoDate;
+        quizType.innerText = infoType;
+        quizNum.innerText = infoNum;
+        quizQuestion.innerText = infoQuestion;
+        quizAnswer.innerText = infoAnswer;
+        quizDesc.innerText = infoDesc;
+
+        // 정답 해설 숨기기
+        quizAnswer.classList.add("none");
+        quizDesc.classList.add("none");
+
+        // 정답 확인하기
+        quizConfirm.addEventListener("click", () => {
+            const userAnswer = quizInput.value;
+
+        
+
+            if(infoAnswer == userAnswer){
+                quizAnimation.classList.add("like");
+            } else {
+                quizAnimation.classList.add("dislike");
+                quizAnswer.classList.remove("none");
+                quizDesc.classList.remove("none");
+            }
+            quizConfirm.classList.add("none");
+            quizInput.classList.add("none");
+            quizAnswer.classList.remove("none");
+            quizDesc.classList.remove("none");
+        });
+    </script>

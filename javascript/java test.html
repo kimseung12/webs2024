@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 효과</title>
+
+    <link rel="stylesheet" href="https://webfontworld.github.io/gmarket/GmarketSans.css" >
+    <link rel="stylesheet" href="https://websfont.github.io/nanumSquareNeo/nanumSquareNeo.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../assets/css/default.min.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1>
+                <a href="index.html">javascript</a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="javascript01.html">데이터 저장하기</a></li>
+                    <li><a href="javascript02.html">데이터 불러오기</a></li>
+                    <li><a href="javascript03.html">데이터 실행하기</a></li>
+                    <li><a href="javascript04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript05.html">문자열 객체</a></li>
+                    <li><a href="javascript06.html">배열 객체</a></li>
+                    <li><a href="javascript07.html">수학 객체</a></li>
+                    <li><a href="javascript08.html">브라우저 객체</a></li>
+                    <li><a href="javascript09.html">요소 객체</a></li>
+                    <li><a href="javascript010.html">이벤트 객체</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript11.html">데이터 효과</a></li>
+                    <li class="active"><a href="javascript12.html">퀴즈 효과</a></li>
+                    <li><a href="javascript13.html">마우스 효과</a></li>
+                    <li><a href="javascript14.html">슬라이드 효과</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+
+        <main id="main">
+            <div class="main__desc"></div>
+                <div class="decs01">
+                    <h2>01. 퀴즈 이펙트 : 정답 확인하기 유형(1문제)</h2>
+                    <p>정답버튼을 누르면 정답이 나오는 퀴즈입니다.</p>
+                    <ul>
+                        <li>저장하기 : 변수</li>
+                        <li>제어하기 : if문</li>
+                        <li>선택자 : docment.querySelector</li>
+                        <li>메서드 : innerText(), classList.add(), classList.remove()</li>
+                        <li>정답 확인하기</li>
+                    </ul>
+                    <a href="quiz/quizeffect01.html">확인하기</a>
+                </div>
+                <!-- //main__desc -->
+
+            <div class="main__sample">
+                <div id="sample01" class="sample">
+                    <h3>문제 정보 입력하기</h3>
+                    <p>변수에 문제 정보 입력</p>
+<pre><code class="language-js">{
+    const infoDate = "2021년 10월";
+    const infoType = "정보처리 기능사";
+    const infoNum = "1";
+    const infoQuestion = "CPU의 정보처리 속도 단위 중 초당 100만 개의 연산을 수행한다는 의미의 단위는?";
+    const infoAnswer = "MIPS";
+    const infoDesc = "LIPS는 초당 1개, KIPS는 초당 1000개, MIPS는 초당 1000000의 연산을 수행하는 것을 의미합니다."; 
+}
+</code></pre>
+                    <p class="desc">1️⃣ infoDate: "2021년 10월" - 정보가 발행된 날짜를 나타내는 변수입니다.<br>
+                                    2️⃣ infoType: "정보처리 기능사" - 정보의 유형이나 범주를 나타내는 변수입니다.<br>
+                                    3️⃣ infoNum: "1" - 정보의 번호나 순서를 나타내는 변수입니다.<br>
+                                    4️⃣ infoQuestion: "CPU의 정보처리 속도 단위 중 초당 100만 개의 연산을 수행한다는 의미의 단위는?" - 정보에 관한 질문을 나타내는 변수입니다.<br>
+                                    5️⃣ infoAnswer: "MIPS" - 질문에 대한 답변을 나타내는 변수입니다.<br>
+                                    6️⃣ infoDesc: "LIPS는 초당 1개, KIPS는 초당 1000개, MIPS는 초당 1000000의 연산을 수행하는 것을 의미합니다." - 답변에 대한 설명을 나타내는 변수입니다.
+                        
+                    </p>
+                </div>
+                <!-- //sample01 -->
+
+                <div id="sample02" class="sample">
+                    <h3>선택자</h3>
+                    <p>document.querySelector()</p>
+<pre><code class="language-js">{
+    const quizWrap = document.querySelector(".quiz__wrap");
+    const quizDate = quizWrap.querySelector(".quiz__date");
+    const quizType = quizWrap.querySelector(".quiz__type");
+    const quizNum = quizWrap.querySelector(".quiz__question em");
+    const quizQuestion = quizWrap.querySelector(".quiz__question span");
+    const quizAnswer = quizWrap.querySelector(".quiz__answer");
+    const quizDesc = quizWrap.querySelector(".quiz__desc");
+    const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+    const quizInput = quizWrap.querySelector(".quiz__input input");
+    const quizAnimation = quizWrap.querySelector(".quiz__animation");
+}
+</code></pre>
+                    <p class="desc">1️⃣ quizWrap: 클래스 이름이 "quiz__wrap"인 요소를 선택합니다. 이 변수는 퀴즈 컨테이너를 나타냅니다.<br>
+                                    2️⃣ quizDate: 클래스 이름이 "quiz__date"인 요소를 quizWrap 내에서 선택합니다.<br> 이 변수는 퀴즈의 날짜를 나타내는 요소를 가리킵니다.<br>
+                                    3️⃣ quizType: 클래스 이름이 "quiz__type"인 요소를 quizWrap 내에서 선택합니다.<br> 이 변수는 퀴즈의 유형을 나타내는 요소를 가리킵니다.<br>
+                                    4️⃣ quizNum: 클래스 이름이 "quiz__question em"인 요소를 quizWrap 내에서 선택합니다.<br> 이 변수는 퀴즈의 번호나 순서를 나타내는 요소를 가리킵니다.<br>
+                                    5️⃣ quizQuestion: 클래스 이름이 "quiz__question span"인 요소를 quizWrap 내에서 선택합니다.<br> 이 변수는 퀴즈의 질문을 나타내는 요소를 가리킵니다.<br>
+                                    6️⃣ quizAnswer: 클래스 이름이 "quiz__answer"인 요소를 quizWrap 내에서 선택합니다.<br> 이 변수는 퀴즈의 정답을 표시하는 요소를 가리킵니다.<br>
+                                    7️⃣ quizDesc: 클래스 이름이 "quiz__desc"인 요소를 quizWrap 내에서 선택합니다.<br> 이 변수는 퀴즈 정답에 대한 설명을 표시하는 요소를 가리킵니다.<br>
+                                    8️⃣ quizConfirm: 클래스 이름이 "quiz__confirm"인 요소를 quizWrap 내에서 선택합니다.<br> 이 변수는 사용자가 퀴즈를 확인하는 데 사용할 버튼 또는 요소를 가리킵니다.<br>
+                                    9️⃣ quizInput: 클래스 이름이 "quiz__input input"인 입력 요소를 quizWrap 내에서 선택합니다.<br> 이 변수는 사용자가 정답을 입력하는 데 사용하는 입력 상자를 가리킵니다.<br>
+                                    🔟 quizAnimation: 클래스 이름이 "quiz__animation"인 요소를 quizWrap 내에서 선택합니다.<br> 이 변수는 퀴즈와 관련된 애니메이션 또는 그래픽 효과를 가리킵니다.
+                    </p>
+                </div>
+                <!-- //sample02 -->
+
+                <div id="sample03" class="sample">
+                    <h3>문제 출력 하기</h3>
+                    <p>.innerText</p>
+<pre><code class="language-js">{
+    quizDate.innerText = infoDate;
+    quizType.innerText = infoType;
+    quizNum.innerText = infoNum;
+    quizQuestion.innerText = infoQuestion;
+    quizAnswer.innerText = infoAnswer;
+    quizDesc.innerText = infoDesc; 
+}
+</code></pre>
+                    <p class="desc">1️⃣ quizDate.innerText = infoDate;: 이 줄은 quizDate라는 HTML 요소에 infoDate 변수의 값을 할당합니다.<br> 즉, infoDate 변수의 내용을 quizDate 요소의 텍스트로 설정합니다.<br>
+                                    2️⃣ quizType.innerText = infoType;: 이 줄은 quizType이라는 HTML 요소에 infoType 변수의 값을 할당합니다.<br> infoType 변수의 내용을 quizType 요소의 텍스트로 설정합니다.<br>
+                                    3️⃣ quizNum.innerText = infoNum;: 이 줄은 quizNum이라는 HTML 요소에 infoNum 변수의 값을 할당합니다.<br> infoNum 변수의 내용을 quizNum 요소의 텍스트로 설정합니다. <br>
+                                    4️⃣ quizQuestion.innerText = infoQuestion;: 이 줄은 quizQuestion이라는 HTML 요소에 infoQuestion 변수의 값을 할당합니다.<br> infoQuestion 변수의 내용을 quizQuestion 요소의 텍스트로 설정합니다.<br>
+                                    5️⃣ quizAnswer.innerText = infoAnswer;: 이 줄은 quizAnswer라는 HTML 요소에 infoAnswer 변수의 값을 할당합니다.<br> infoAnswer 변수의 내용을 quizAnswer 요소의 텍스트로 설정합니다.<br>
+                                    6️⃣ quizDesc.innerText = infoDesc;: 이 줄은 quizDesc라는 HTML 요소에 infoDesc 변수의 값을 할당합니다.<br> infoDesc 변수의 내용을 quizDesc 요소의 텍스트로 설정합니다.
+                    </p>
+                </div>
+                <!-- //sample03 -->
+
+                <div id="sample04" class="sample">
+                    <h3>정답 해설 숨기기</h3>
+                    <p>.classList.add("none");</p>
+<pre><code class="language-js">{
+    quizAnswer.classList.add("none");
+    quizDesc.classList.add("none"); 
+}
+</code></pre>
+                    <p class="desc">1️⃣quizAnswer.classList.add("none");: 이 줄은 quizAnswer라는 HTML 요소에 "none"이라는 CSS 클래스를 추가합니다. 이렇게 하면 해당 요소에 "none" 클래스가 적용되어 CSS 스타일이 적용됩니다. "none" 클래스가 보통 특정 요소를 숨기거나 숨은 상태로 만들 때 사용됩니다.<br>
+                                    2️⃣quizDesc.classList.add("none");: 이 줄은 quizDesc라는 HTML 요소에 "none"이라는 CSS 클래스를 추가합니다. 마찬가지로 해당 요소에 "none" 클래스가 추가되어 숨김 처리됩니다.
+                    </p>
+
+                </div>
+                <!-- //sample04 -->
+
+                <div id="sample05" class="sample">
+                    <h3>정답 확인하기</h3>
+                    <p>.addEventListener()</p>
+<pre><code class="language-js">{
+    quizConfirm.addEventListener("click", () => {
+        const userAnswer = quizInput.value;
+
+        if(infoAnswer == userAnswer){
+            quizAnimation.classList.add("like");
+        } else {
+            quizAnimation.classList.add("dislike");
+            quizAnswer.classList.remove("none");
+            quizDesc.classList.remove("none");
+        }
+        quizConfirm.classList.add("none");
+        quizInput.classList.add("none");
+        quizAnswer.classList.remove("none");
+        quizDesc.classList.remove("none");
+    });
+}
+</code></pre>
+                    <p class="desc">1️⃣ quizConfirm.addEventListener("click", () => { ... });: 이 부분은 "quizConfirm"라는 HTML 요소에 클릭 이벤트 리스너를 추가하는 코드입니다. 사용자가 버튼을 클릭하면 아래의 코드 블록이 실행됩니다.<br>
+                                    2️⃣ const userAnswer = quizInput.value;: 사용자가 입력한 답변을 "quizInput" 요소에서 가져와서 "userAnswer" 변수에 저장합니다.<br>
+                                    3️⃣ if (infoAnswer == userAnswer) { ... } else { ... }: 사용자의 답변과 정답을 비교하는 조건문을 사용합니다. 만약 사용자의 답변과 정답이 일치하면 첫 번째 블록이 실행되고, 그렇지 않으면 두 번째 블록이 실행됩니다.<br>
+                                    4️⃣ quizAnimation.classList.add("like");: 정답이면 "quizAnimation" 요소에 "like" 클래스를 추가하여 어떤 긍정적인 애니메이션 또는 효과를 표시합니다. 이것은 사용자에게 정답을 맞춘 것을 시각적으로 보여주는 데 사용됩니다.<br>
+                                    5️⃣ quizAnimation.classList.add("dislike");: 오답일 경우 "quizAnimation" 요소에 "dislike" 클래스를 추가하여 부정적인 효과를 표시합니다.<br>
+                                    6️⃣ quizAnswer.classList.remove("none"); 및 quizDesc.classList.remove("none");: 오답 또는 정답일 경우 "quizAnswer"와 "quizDesc" 요소의 "none" 클래스를 제거하여 정답과 그에 대한 설명을 표시합니다.<br>
+                                    7️⃣ quizConfirm.classList.add("none"); 및 quizInput.classList.add("none");: 사용자가 정답을 제출한 후 "quizConfirm" 버튼과 "quizInput" 입력 상자를 숨깁니다.
+                    </p>
+
+                </div>
+                <!-- //sample05 -->
+                
+            </div>
+        </main>
+        <!--//main  -->
+
+        <footer id="footer">
+            <a href="mailto:tmddnrla1@naver.com">tmddnrla1@naver.com</a>
+        </footer>
+        <!--//footer  -->  
+    </div>
+
+     <!-- script -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+</html>
