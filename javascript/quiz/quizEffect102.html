@@ -1439,6 +1439,7 @@
             updateQuiz();
 
             const confirmButtons = document.querySelectorAll(".quiz__confirm");
+            
             confirmButtons.forEach((button, index) => {
                 button.addEventListener("click", () => {
                     answerQuiz(index);
