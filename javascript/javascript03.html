@@ -388,7 +388,11 @@
     func(num[1], str[1]);
 }
 </code></pre>
-                    <p class="desc"></p>
+                    <p class="desc">num 배열에는 두 개의 숫자, 13과 14가 포함되어 있습니다.<br>
+                        str 배열에는 두 개의 문자열, "함수가 실행되었습니다."가 두 번 포함되어 있습니다.<br>
+                        func 함수가 두 번 호출됩니다. 각 호출에서는 배열에서 요소를 추출하여 함수에 전달합니다:<br>
+                        첫번째 호출에서는 num[0]과 str[0]이 함수에 전달됩니다. 이는 숫자 13과 문자열 "함수가 실행되었습니다."를 전달합니다.<br>
+                        두번째 호출에서는 num[1]과 str[1]이 함수에 전달됩니다. 이는 숫자 14와 문자열 "함수가 실행되었습니다."를 전달합니다.</p>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
@@ -417,7 +421,12 @@
     func(info.num, info.str);
 }
 </code></pre>
-                    <p class="desc"></p>
+                    <p class="desc">이 객체에는 두 개의 속성이 있습니다<br>
+                        num: 값으로 15를 가지고 있습니다.<br>
+                        str: 값으로 "함수가 실행되었습니다."라는 문자열을 가지고 있습니다.<br>
+                        func 함수가 호출됩니다. 이 호출에서는 객체 info의 속성을 함수에 전달합니다<br>
+                        여기서 info.num은 객체 info의 num 속성을 나타내고, info.str은 객체 info의 str 속성을 나타냅니다. 즉, 함수에는 객체 info의 속성 값이 전달됩니다.<br>
+                        객체를 사용하면 관련된 정보를 하나의 단위로 관리하고 함수에 전달하기가 더 편리해집니다.</p>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
@@ -445,7 +454,13 @@
     func(info[1].num, info[1].str);
 }
 </code></pre>
-                    <p class="desc"></p>
+                    <p class="desc">info라는 배열에는 두 개의 객체가 포함되어 있으며, 각 객체는 다음과 같은 속성을 가지고 있습니다<br>
+                        첫번째 객체<br>
+                        num: 값으로 16을 가지고 있습니다.<br>
+                        str: 값으로 "함수가 실행되었습니다."라는 문자열을 가지고 있습니다<br>
+                        두번째 객체<br>
+                        num: 값으로 17을 가지고 있습니다.<br>
+                        str: 값으로 "함수가 실행되었습니다."라는 문자열을 가지고 있습니다.</p>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
@@ -544,7 +559,7 @@
                             <summary>결과 확인하기</summary>
                             <div>
                                 21. 함수가 실행되었습니다.<br>
-                                22. 함수가 실행되었습니다.1<br>
+                                22. 함수가 실행되었습니다.<br>
                             </div>
                         </details>
                     </div>
