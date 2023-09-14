@@ -84,6 +84,69 @@
         
             <!-- //main__menu -->
             <div class="main__sample">
+                <div id="s21" class="sample">
+                    <h3>21. Array.prototype.join()</h3>
+                    <p>join() 메서드는 배열의 모든 요소를 연결해 하나의 문자열로 만듭니다.</p>
+<pre><code class="language-js">{
+    const elements = ["Fire", "Air", "Water"];
+
+    console.log(elements.join());
+    // 결과값 : "Fire,Air,Water"
+
+    console.log(elements.join(""));
+    // 결과값 : "FireAirWater"
+
+    console.log(elements.join("-"));
+    // 결과값 : "Fire-Air-Water"
+}
+</code></pre>
+                    <!-- <p class="desc"></p> -->
+                </div>
+                <!-- //s21 -->
+
+                <div id="s22" class="sample">
+                    <h3>22. Array.prototype.pop()</h3>
+                    <p>pop() 메서드는 배열에서 마지막 요소를 제거하고 그 요소를 반환합니다.</p>
+<pre><code class="language-js">{
+    const plants = ["broccoli", "cauliflower", "cabbage", "kale", "tomato"];
+
+    console.log(plants.pop());
+    // 결과값 : "tomato"
+
+    console.log(plants);
+    // 결과값 : Array ["broccoli", "cauliflower", "cabbage", "kale"]
+
+    console.log(plants.pop());
+    // 결과값 : "kale"
+
+    console.log(plants);
+    // 결과값 : Array ["broccoli", "cauliflower", "cabbage"]
+}
+</code></pre>
+                    <!-- <p class="desc"></p> -->
+                </div>
+                <!-- //s22 -->
+
+                <div id="s23" class="sample">
+                    <h3>23. Array.prototype.push()</h3>
+                    <p>push() 메서드는 배열의 끝에 하나 이상의 요소를 추가하고, 배열의 새로운 길이를 반환합니다.</p>
+<pre><code class="language-js">{
+    const animals = ["pigs", "goats", "sheep"];
+
+    animals.push("cows");
+
+    console.log(animals);
+    // 결과값 : Array ["pigs", "goats", "sheep", "cows"]
+
+    animals.push("chickens", "cats", "dogs");
+    
+    console.log(animals);
+    // 결과값 : Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
+}
+</code></pre>
+                    <!-- <p class="desc"></p> -->
+                </div>
+                <!-- //s23 -->
                 
 
             </div>

@@ -454,13 +454,11 @@
     func(info[1].num, info[1].str);
 }
 </code></pre>
-                    <p class="desc">info라는 배열에는 두 개의 객체가 포함되어 있으며, 각 객체는 다음과 같은 속성을 가지고 있습니다<br>
-                        첫번째 객체<br>
-                        num: 값으로 16을 가지고 있습니다.<br>
-                        str: 값으로 "함수가 실행되었습니다."라는 문자열을 가지고 있습니다<br>
-                        두번째 객체<br>
-                        num: 값으로 17을 가지고 있습니다.<br>
-                        str: 값으로 "함수가 실행되었습니다."라는 문자열을 가지고 있습니다.</p>
+                    <p class="desc">info 배열은 두 개의 객체로 구성되어 있습니다. 각 객체에는 num과 str라는 두 개의 속성이 있습니다. num 속성은 숫자이고, str 속성은 문자열입니다. 이 배열은 두 개의 메시지를 저장하고 있습니다.<br>
+                        func라는 함수가 정의되어 있습니다. 이 함수는 두 개의 매개변수 num과 str을 받고, 이 두 매개변수를 사용하여 메시지를 콘솔에 출력합니다. 출력되는 메시지의 형식은 ${num}. ${str}입니다.<br>
+                        그런 다음, func 함수가 두 번 호출됩니다. 첫 번째 호출에서는 info 배열의 첫 번째 객체의 num과 str 속성을 전달하여 "16. 함수가 실행되었습니다."라는 메시지를 콘솔에 출력합니다.<br>
+                        두 번째 호출에서는 info 배열의 두 번째 객체의 num과 str 속성을 전달하여 "17. 함수가 실행되었습니다."라는 메시지를 콘솔에 출력합니다.<br>
+                    </p>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
@@ -488,7 +486,12 @@
     info.result();
 }
 </code></pre>
-                    <p class="desc"> </p>
+                    <p class="desc">info 객체는 세 개의 속성을 가지고 있습니다<br>
+                        num: 숫자 18을 저장하는 속성입니다.<br>
+                        str: 문자열 "함수가 실행되었습니다."를 저장하는 속성입니다.<br>
+                        result: 함수 표현식을 저장하는 속성입니다.<br>
+                        result 속성은 함수 표현식으로 정의되어 있습니다. 이 함수는 객체 info의 다른 속성인 num과 str을 사용하여 메시지를 콘솔에 출력합니다.<br>
+                        info.result()는 result 속성에 저장된 함수를 호출합니다. 이 함수가 호출되면, num과 str 속성을 사용하여 "18. 함수가 실행되었습니다."라는 메시지가 콘솔에 출력됩니다.</p>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
@@ -521,7 +524,11 @@
     info2.result();
 }
 </code></pre>
-                    <p class="desc"></p>
+                    <p class="desc">Func이라는 생성자 함수가 정의되어 있습니다. 이 함수는 두 개의 매개변수 num과 str을 받습니다. 생성자 함수 내에서는 다음 작업을 수행합니다:<br>
+                        this.num 및 this.str: num과 str 매개변수를 인스턴스의 속성으로 설정합니다.<br>
+                        this.result 메서드: 화살표 함수로 정의되어 있으며, 객체 인스턴스의 num과 str 속성을 사용하여 메시지를 콘솔에 출력합니다.<br>
+                        info와 info2라는 두 개의 객체 인스턴스를 생성합니다. 각각은 Func 생성자 함수를 사용하여 생성되며, 생성자 함수를 호출할 때 num과 str 값을 전달합니다. 이렇게 하면 각 인스턴스는 자체적으로 num과 str 속성을 가지게 됩니다.<br>
+                        info.result() 및 info2.result()를 호출합니다. 이 호출은 각 객체 인스턴스의 result 메서드를 실행합니다. 메서드 내에서는 해당 인스턴스의 num 및 str 값을 사용하여 메시지를 콘솔에 출력합니다.</p>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
@@ -553,7 +560,11 @@
     info2.result();
 }
 </code></pre>
-                    <p class="desc"></p>
+                    <p class="desc">Func이라는 생성자 함수가 정의되어 있습니다. 이 함수는 두 개의 매개변수 num과 str을 받습니다. 생성자 함수 내에서는 다음 작업을 수행합니다<br>
+                        this.num 및 this.str: num과 str 매개변수를 인스턴스의 속성으로 설정합니다.<br>
+                        Func.prototype.result는 생성자 함수 Func의 프로토타입 객체에 메서드로 추가됩니다. 이 메서드는 화살표 함수가 아닌 일반 함수로 정의되어 있으며, 프로토타입 객체에 추가되면 모든 Func 인스턴스에서 공유됩니다. 이 메서드는 해당 인스턴스의 num 및 str 속성을 사용하여 메시지를 콘솔에 출력합니다.<br>
+                        info1과 info2라는 두 개의 객체 인스턴스를 생성합니다. 각각은 Func 생성자 함수를 사용하여 생성되며, 생성자 함수를 호출할 때 num과 str 값을 전달합니다. 이렇게 하면 각 인스턴스는 자체적으로 num과 str 속성을 가지게 됩니다.<br>
+                        info1.result() 및 info2.result()를 호출합니다. 이 호출은 각 객체 인스턴스의 result 메서드를 실행합니다. 메서드 내에서는 해당 인스턴스의 num 및 str 값을 사용하여 메시지를 콘솔에 출력합니다.</p>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
@@ -591,7 +602,11 @@
     info2.result2();
 }
 </code></pre>
-                    <p class="desc"></p>
+                    <p class="desc">Func이라는 생성자 함수가 정의되어 있습니다. 이 함수는 두 개의 매개변수 num과 str을 받습니다. 생성자 함수 내에서는 다음 작업을 수행합니다:<br>
+                        this.num 및 this.str: num과 str 매개변수를 인스턴스의 속성으로 설정합니다.<br>
+                        Func.prototype 객체는 기본적으로 result1 및 result2 두 개의 메서드로 구성되어 있습니다. 이러한 메서드는 객체 인스턴스에서 호출될 수 있으며, this.num과 this.str 속성을 사용하여 메시지를 콘솔에 출력합니다.<br>
+                        info1과 info2라는 두 개의 객체 인스턴스를 생성합니다. 각각은 Func 생성자 함수를 사용하여 생성되며, 생성자 함수를 호출할 때 num과 str 값을 전달합니다. 이렇게 하면 각 인스턴스는 자체적으로 num과 str 속성을 가지게 됩니다.<br>
+                        info1.result1() 및 info2.result2()를 호출합니다. 이 호출은 각 객체 인스턴스의 result1 및 result2 메서드를 실행합니다. 메서드 내에서는 해당 인스턴스의 num 및 str 값을 사용하여 메시지를 콘솔에 출력합니다.</p>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
@@ -809,10 +824,11 @@
             // 인스턴스 생성
             const info = new Func(19, "함수가 실행되었습니다.");
             const info2 = new Func(20, "함수가 실행되었습니다.");
-
+            
             // 호출
             info.result();
             info2.result();
+
         }
 
         // 18. 함수 유형 : 프로토타입 함수

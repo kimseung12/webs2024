@@ -251,7 +251,7 @@
 <pre><code class="language-js">{
     const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-    for(let el of arr){
+    for(let element of arr){
         console.log(element);
     }
 }
@@ -282,7 +282,7 @@
 <pre><code class="language-js">{
     const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-    for(let el in arr){
+    for(let element in arr){
         console.log(arr[element]);
     }
 }
@@ -456,7 +456,7 @@
 }
 </code></pre>
                     <p class="desc">코드에는 obj세 가지 속성이 있는 개체가 있습니다 .<BR>
-                        이러한 속성의 값에 액세스하려면 점 표기법( , , 및 )과 대괄호 표기( , , 및 )라는 두 가지 방법을 사용합니다<BR>
+                        이러한 속성의 값에 액세스하려면 점 표기법과 대괄호표기법 이라는 두 가지 방법을 사용합니다<BR>
                         점 표기법과 대괄호 표기법 모두 객체 속성에 접근하는 데 사용될 수 있으며, 이 경우에는 동일한 결과를 산출합니다.<BR>점 표기법은 일반적으로 속성 이름을 미리 알고 있고 유효한 JavaScript 식별자인 경우에 사용되는 반면, 대괄호 표기법은 더 유연하며 동적 이름이나 비표준 이름으로 속성에 액세스할 수 있도록 해줍니다.
                     </p>
                     <div class="result">
@@ -796,9 +796,29 @@
     <script>hljs.highlightAll();</script>
     <script>
         // 01. 변수 : 데이터 불러오기
+        {
+            let x = 100, y = 200, z = "javascript";
+
+            console.log(x, y, z); 
+        }
         // 02. 상수 : 데이터 불러오기
+        {
+            const x = 100, y = 200, z = "javascript";
+
+            console.log(x, y, z); 
+        }
         // 03. 배열 : 데이터 불러오기
+        {
+            const arr = [100, 200, "javascript"];
+
+            console.log(arr[0], arr[1], arr[2]); 
+        }
         // 04. 배열 : 데이터 갯수 불러오기
+        {
+            const arr = [100, 200, "javascript"];
+
+            console.log(arr.length);
+        }
         // 05. 배열 : 데이터  불러오기 : for()
         {
             const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
@@ -854,6 +874,17 @@
         }
 
         // 11. 배열 : 데이터  불러오기 : 배열 펼침 연산자
+        {
+            const arr1 = [100, 200,"javascript"];
+            const arr2 = [300, 400,"jquery"];
+            const arr3 = [...arr1, 500];
+
+            console.log(arr1);              
+            console.log(...arr1);           
+            console.log(...arr1, ...arr2);  
+            console.log(...arr3);
+    
+        }
         // 12. 배열 : 데이터  불러오기 : 배열 구조 분해 할당
         // 13. 객체 : 데이터  불러오기
         {

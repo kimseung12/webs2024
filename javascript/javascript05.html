@@ -70,8 +70,8 @@
                     <li><a href="#s">24. <strong>string.prototype.endsWith()</strong>          메서드는 끝나는 문자열에서 특정 문자열로 끝나는지 확인하여, 그 결과를 불린(true, false)로 반환합니다.</a></li>
                     <li><a href="#s">25. <strong>string.prototype.toLocaleLowerCase()</strong> 메서드는 문자열을 소문자로 설정하고, 로케일 소문자 문자열을 반환합니다.</a></li>
                     <li><a href="#s">26. <strong>string.prototype.toLocaleUpperCase()</strong> 메서드는 문자열을 대문자로 설정하고, 로케일 대문자 문자열을 반환합니다.</a></li>
-                    <li><a href="#s">27. <strong>string.prototype.toLowerCase()</strong>       메서드는 문자열을 소문자로 설정하고, 소문자 문자열을 반환합니다.</a></li>
-                    <li><a href="#s">28. <strong>string.prototype.toUpperCase()</strong>       메서드는 문자열을 대문자로 설정하고, 대문자 문자열을 반환합니다.</a></li>
+                    <li><a href="#s27">27. <strong>string.prototype.toLowerCase()</strong>       메서드는 문자열을 소문자로 설정하고, 소문자 문자열을 반환합니다.</a></li>
+                    <li><a href="#s27">28. <strong>string.prototype.toUpperCase()</strong>       메서드는 문자열을 대문자로 설정하고, 대문자 문자열을 반환합니다.</a></li>
                     <li><a href="#s">29. <strong>string.prototype.toString()</strong>          메서드는 데이터를 문자열로 변환하고, 문자열을 반환합니다.</a></li>
                     <li><a href="#s30">30. <strong>string.prototype.trim()</strong>💛              메서드는 문자열의 앞/뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
                     <li><a href="#s">31. <strong>string.prototype.trimEnd()</strong>           메서드는 문자열의 뒤 공백을 제거하고, 새로운 문자열을 반환합니다.</a></li>
@@ -82,23 +82,58 @@
         
             <!-- //main__menu -->
             <div class="main__sample">
+                <div id="s27" class="sample">
+                    <h3>27. String.prototype.toLowerCase()</h3>
+                    <p>toLowerCase() 메서드는 문자열을 소문자로 변환해 반환합니다.</p>
+<pre><code class="language-js">{
+    const sentence = "The Quick Brown Fox Jumps Over The Lazy Dog.";
+
+    console.log(sentence);
+    // 결과값 : "The Quick Brown Fox Jumps Over The Lazy Dog."
+
+    console.log(sentence.toLowerCase());
+    // 결과값 : "the quick brown fox jumps over the lazy dog."
+}
+</code></pre>
+                    <!-- <p class="desc"></p> -->
+                </div>
+                <!-- //s27 -->
+
+                <div id="s28" class="sample">
+                    <h3>28. String.prototype.toUpperCase()</h3>
+                    <p>toUpperCase() 메서드는 문자열을 대문자로 변환해 반환합니다.</p>
+<pre><code class="language-js">{
+    const sentence = "The quick brown fox jumps over the lazy dog.";
+
+    console.log(sentence);
+    // 결과값 : "The quick brown fox jumps over the lazy dog."
+
+    console.log(sentence.toUpperCase());
+    // 결과값 : "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG."
+}
+</code></pre>
+                    <!-- <p class="desc"></p> -->
+                </div>
+                <!-- //s28 -->
+
                 <div id="s30" class="sample">
-                    <h3>30. string.prototype.trim()</h3>
+                    <h3>30. String.prototype.trim()</h3>
                     <p>trim() 메서드는 문자열 양 끝의 공백을 제거하고 원본 문자열을 수정하지 않고 새로운 문자열을 반환합니다.</p>
 <pre><code class="language-js">{
-    const greeting = '   Hello world!   ';
+    const  x = "   Hello world!   ";
 
-    console.log(greeting);
-    // Expected output: "   Hello world!   ";
+    console.log(x);
+    // 결과값 : "   Hello world!   ";
     
-    console.log(greeting.trim());
-    // Expected output: "Hello world!";
+    console.log(x.trim());
+    // 결과값 : "Hello world!";
     
 }
 </code></pre>
                     <!-- <p class="desc"></p> -->
                 </div>
-                <!-- //sample01 -->
+                <!-- //s30 -->
+                
             </div>
         </main>
         <!--//main  -->
