@@ -123,7 +123,7 @@
                 if(currentIndex < quizInfo.length -1){
                     quizNext.classList.add("none");         //다음 버튼 삭제
                     quizConfirm.classList.remove("none");      //정답 버튼 추가
-                    currentIndex++;     //문제 번호 추가
+                    currentIndex++;                 //문제 번호 추가
                     updataQuiz(currentIndex);       //퀴즈 반영
                     
                 } else {
@@ -135,28 +135,31 @@
 
         // 정답 확인
         const checkAnswer = () => {
-            const selectedChoice = quizWrap.querySelectorAll("input[name='choice']:checked");        
+            const selectedChoice = quizWrap.querySelector("input[name='choice']:checked"); 
+            
+            if (!selectedChoice) {
+                alert("답을 선택하세요.");
+                return;
+            }
+
+            const userAnswer = selectedChoice.value;                        //사용자가 클릭한 정답
             const correctAnswer = quizInfo[currentIndex].infoAnswer;        //정답지의 정답
             const quizElement = quizWrap.querySelector(".quiz");
             const descElement = quizWrap.querySelector(".quiz__desc");
             const answerElement = quizWrap.querySelector(".quiz__answer");
 
-            if(selectedChoice.length > 0){
-                const userAnswer = selectedChoice[0].value;        //사용자가 클릭한 정답
+            
+                        
                 if(userAnswer === correctAnswer){
-                quizElement.classList.add("good");
+                    quizElement.classList.add("good");
                 
                 } else {
                     quizElement.classList.add("bad");
                     answerElement.classList.remove("none");
                 }
-
                 descElement.classList.remove("none");
-            } else {
-                alert("정답을 선택하세요.")
-            }
         };
-            
+          
 
         
 
