@@ -12,7 +12,7 @@ li {
 #header {
     padding: 40px;
     text-align: center;
-    border-bottom: 1px dashed #ccc;
+    border-bottom: 1px dashed #4b4b4b;
 }
 #header h1 {
     font-size: 4vmax;
@@ -64,7 +64,7 @@ li {
 /* main__menu */
 .main__menu {
     padding: 40px;
-    border-bottom: 1px dashed #dcdcdc;
+    border-bottom: 1px dashed #4b4b4b;
 }
 .main__menu ul {
     margin-bottom: 10px;
