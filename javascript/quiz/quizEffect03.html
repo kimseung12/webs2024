@@ -75,7 +75,6 @@
         const quizDesc = quizWrap.querySelector(".quiz__desc");
         const quizChoice = quizWrap.querySelectorAll(".quiz__choice span");
         const quizSelect = quizWrap.querySelectorAll(".quiz__choice input");
-
         const quizConfirm = quizWrap.querySelector(".quiz__confirm");
 
         // 문제 정보
@@ -92,7 +91,7 @@
         ];
 
         // 문제 출력
-      
+        // innerHtml은 html의 태그도 인식해줌
         quizHeader.innerHTML = quizInfo[0].infoDate + " " + quizInfo[0].infoType;
         quizQuestion.innerHTML = quizInfo[0].infoNum + ". " + quizInfo[0].infoQuestion;
         quizAnswer.innerText = quizInfo[0].infoAnswer;
