@@ -367,7 +367,7 @@
     z-index: 10;
     border-radius: 20px;
     opacity: 0;
-    transform: opacity 0.3s;
+    transition: opacity 0.3s;
     cursor: pointer;
 }
 .use__img > div figcaption {
@@ -379,7 +379,7 @@
     color: #fff;
     z-index: 100;
     font-weight: 800;
-    transform: opacity 0.5s;
+    transition: opacity 0.5s;
     opacity: 0;
 }
 .use__img > div figure:hover::after {
