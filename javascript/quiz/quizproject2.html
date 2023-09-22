@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이벤트</title>
+
+    <link rel="stylesheet" href="css/project.css">
+
+
+</head>
+
+<body>
+    <div id="header">
+        <a href="quizproject.html"><h1>Quiz</h1></a>
+    </div>
+    <!-- //header -->
+
+    <div id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header"><span>캐릭터 퀴즈</span></div>
+                <div class="quiz__main">
+                    <div class="quiz_img">
+                        <img src="assets/img/img1-min.png" alt="이미지">
+                    </div>
+                    <div class="quiz__box">
+                        <div class="quiz__question">내가 누구게요~?</div>
+                        <div class="quiz__footer">
+                            <input type="text" name="text" id="text">
+                            <div class="quiz__answer none"></div>
+                        </div>
+                    <div class="box__footer">
+                        <button class="quiz__confirm">정답 확인</button>
+                        <button class="quiz__Next">다음</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //main -->
+
+    <footer id="footer">
+        <div class="footer__desc">위 문제는 애니메이션 캐릭터가 나오는 문제입니다.</div>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        const quizData = [
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "버즈",
+        imageURL: "assets/img/img5-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "버럭이",
+        imageURL: "assets/img/img6-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "스티치",
+        imageURL: "assets/img/img7-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "슬픔이",
+        imageURL: "assets/img/img8-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "알라딘",
+        imageURL: "assets/img/img9-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "엘사",
+        imageURL: "assets/img/img10-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "우슬라",
+        imageURL: "assets/img/img11-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "크루엘라",
+        imageURL: "assets/img/img12-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "티몬",
+        imageURL: "assets/img/img13-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "비비",
+        imageURL: "assets/img/img14-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "포키",
+        imageURL: "assets/img/img15-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "품바",
+        imageURL: "assets/img/img16-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "패트와매트",
+        imageURL: "assets/img/img17-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "네즈코",
+        imageURL: "assets/img/img18-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "고죠사토루",
+        imageURL: "assets/img/img19-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "핑구",
+        imageURL: "assets/img/img20-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "스폰지밥",
+        imageURL: "assets/img/img21-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "훈이",
+        imageURL: "assets/img/img22-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "세일러문",
+        imageURL: "assets/img/img23-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "코스모",
+        imageURL: "assets/img/img24-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "보스베이비",
+        imageURL: "assets/img/img25-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "할리퀸",
+        imageURL: "assets/img/img26-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "",
+        imageURL: "assets/img/img27-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "스파이더맨",
+        imageURL: "assets/img/img28-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "아이스베어",
+        imageURL: "assets/img/img29-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "브레드",
+        imageURL: "assets/img/img30-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "플랑크톤",
+        imageURL: "assets/img/img31-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img32-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "도널드덕",
+        imageURL: "assets/img/img1-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "말레피센트",
+        imageURL: "assets/img/img2-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "뮬란",
+        imageURL: "assets/img/img3-min.png"
+    },
+    {
+        question: "내가 누구게요~?",
+        answer: "미키마우스",
+        imageURL: "assets/img/img4-min.png"
+    },
+    // 다른 퀴즈 데이터들 추가
+];
+
+let currentQuizIndex = 0; // 현재 퀴즈 인덱스
+
+// DOM 요소를 가져옵니다.
+const quizHeader = document.querySelector(".quiz__header span");
+const quizImage = document.querySelector(".quiz_img img");
+const quizQuestion = document.querySelector(".quiz__question");
+const quizAnswerInput = document.querySelector("#text");
+const quizConfirmButton = document.querySelector(".quiz__confirm");
+const quizNextButton = document.querySelector(".quiz__Next");
+
+// 초기 퀴즈 데이터를 표시합니다.
+displayQuizData();
+
+// 정답 확인 버튼 클릭 이벤트 핸들러를 등록합니다.
+quizConfirmButton.addEventListener("click", checkAnswer);
+
+// 다음 버튼 클릭 이벤트 핸들러를 등록합니다.
+quizNextButton.addEventListener("click", nextQuestion);
+
+// 정답 확인 함수를 정의합니다.
+function checkAnswer() {
+    const userAnswer = quizAnswerInput.value.toLowerCase(); // 입력한 답을 소문자로 변환
+    const correctAnswer = quizData[currentQuizIndex].answer.toLowerCase(); // 정답을 소문자로 변환
+
+    if (userAnswer === correctAnswer) {
+        // 정답을 맞췄을 때
+        // 여기서는 다음 화면으로 넘어가도록 구현하고, 사진을 변경합니다.
+        currentQuizIndex++; // 다음 퀴즈로 이동
+        if (currentQuizIndex < quizData.length) {
+            displayQuizData(); // 새로운 퀴즈 데이터 표시
+        } else {
+            // 마지막 퀴즈를 마쳤을 때 추가 동작 구현
+            alert("퀴즈가 종료되었습니다.");
+            // 원하는 추가 동작을 수행할 수 있습니다.
+        }
+    } else {
+        // 오답일 때 여기에 추가 동작을 구현할 수 있습니다.
+        alert("틀렸습니다. 다시 시도하세요.");
+    }
+
+    // 입력 필드 초기화
+    quizAnswerInput.value = "";
+}
+
+// 다음 문제로 이동하는 함수를 정의합니다.
+function nextQuestion() {
+    currentQuizIndex++; // 다음 퀴즈로 이동
+    if (currentQuizIndex < quizData.length) {
+        displayQuizData(); // 새로운 퀴즈 데이터 표시
+    } else {
+        alert("퀴즈가 종료되었습니다.");
+        // 원하는 추가 동작을 수행할 수 있습니다.
+    }
+
+    // 입력 필드 초기화
+    quizAnswerInput.value = "";
+}
+
+// 퀴즈 데이터를 화면에 표시하는 함수를 정의합니다.
+function displayQuizData() {
+    const currentQuiz = quizData[currentQuizIndex];
+    quizHeader.textContent = currentQuiz.question;
+    quizImage.src = currentQuiz.imageURL;
+    quizQuestion.textContent = currentQuiz.question;
+}
+
+    </script>
+</body>
+
+</html>
