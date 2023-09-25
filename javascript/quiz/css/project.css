@@ -105,9 +105,10 @@ body {
 
 /* header */
 #header {
-    width: 194px;
+    width: 160px;
     height: auto;
     font-family: "nanumSquareNeo";
+    
 }
 #header a h1 {
     color: #000;
@@ -115,6 +116,9 @@ body {
     padding: 10px;
     font-size: 50px;
     font-weight: 900;
+    border: 3px solid #5d06ff;;
+    border-radius: 50%;
+    
 }
 
 /* main */
@@ -132,6 +136,7 @@ body {
     margin-bottom: 20px;
     text-align: center;
     line-height: 1.9;
+    
 }
 .quiz__header span {
     width: 405px;
@@ -147,15 +152,21 @@ body {
 .quiz_img {
     width: 729px;
     height: 586px;
-    margin-bottom: 100px;
+    
     border: 1px solid #FECCBE;
     background-color: #fff;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }
 .quiz_img > img {
-    width: 729px;
-    height: 586px;
+    width: 719px;
+    height: 566px;
     border-radius: 20px;
+    padding: 10px;
+    margin-top: 5px;
 }
 .quiz__box {
     width: 729px;
@@ -211,10 +222,18 @@ body {
     height: 80px;
     border: 3px solid #FECCBE;
     border-radius: 20px;
+    
+}
+
+.feedback {
+    font-size: 24px; /* 원하는 크기로 조절하세요 */
+    color: red; /* 원하는 색상으로 조절하세요 */
+    font-weight: bold; /* 원하는 글꼴 두께로 조절하세요 */
+    margin-bottom: 20px;
 }
 .box__footer {
     margin-top: 50px;
-    margin-bottom: 50px;
+    
 }
 .box__footer button {
     font-weight: bold;
@@ -240,9 +259,18 @@ body {
     font-size: 30px;
     margin-left: 20px;
 }
-
+.box__footer div {
+    margin: 0 auto;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+#score {
+    font-size: 30px;
+}
 /* footer */
 .footer__desc {
     font-size: 30px;
-    margin-bottom: 25px;
+    margin-top: 5px;
+    text-align: center;
 }
