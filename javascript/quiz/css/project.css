@@ -93,10 +93,13 @@ a {
     color: #000;
 }
 body {
-    background-color: #FECCBE;
+    background-image: url(../assets/img/배경3.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
 }
 .none {
     display: none !important;
@@ -105,30 +108,52 @@ body {
 
 /* header */
 #header {
-    width: 100%;
+    width: 194px;
     height: auto;
     font-family: "nanumSquareNeo";
-    display: flex;
-    justify-content: space-between;
-
 }
 #header a h1 {
-    width: 150px;
-    color: #000;
-    margin: 5px 0 0 10px;
-    padding: 10px;
-    font-size: 50px;
-    font-weight: 900;
-    border: 3px solid #5d06ff;;
+    border: 3px solid #000;
     border-radius: 50%;
-}
-#header h2 {
-    width: 150px;
+    text-align: center;
     color: #000;
     margin: 5px 0 0 10px;
     padding: 10px;
     font-size: 50px;
     font-weight: 900;
+}
+
+/* 메인화면 */
+.header {
+    width: 100%;
+    height: 210px;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+    margin: 120px 120px 20px 0;
+}
+
+.header span {
+    height: 120px;
+    font-size: 150px;
+    font-weight: 900;
+}
+.start {
+    text-align: center;
+    margin: 20px 120px;
+}
+.start a {
+    text-align: right;
+    display: inline-block;
+    padding: 10px;
+    font-size: 100px;
+    font-weight: 900;
+    border-radius: 30px;
+    transition: all 0.6s;
+}
+.start a:hover {
+    font-size: 120px;
+    color: #fff;
 }
 
 /* main */
@@ -140,13 +165,12 @@ body {
 .quiz__header {
     width: 100%;
     height: 210px;
-    border: 1px solid #fff;
+    border: 1px solid #000;
     border-radius: 20px;
     background-color: #fff;
     margin-bottom: 20px;
     text-align: center;
     line-height: 1.9;
-    
 }
 .quiz__header span {
     width: 405px;
@@ -162,8 +186,8 @@ body {
 .quiz_img {
     width: 729px;
     height: 586px;
-    
-    border: 1px solid #FECCBE;
+    margin-bottom: 100px;
+    border: 1px solid #000;
     background-color: #fff;
     border-radius: 20px;
     display: flex;
@@ -176,12 +200,17 @@ body {
     height: 566px;
     border-radius: 20px;
     padding: 10px;
-    margin-top: 5px;
+    margin-top: 110px;
+}
+.desc {
+    font-size: 30px;
+    margin: 30px 25px 50px 25px;
+    text-align: center;
 }
 .quiz__box {
     width: 729px;
     height: 586px;
-    border: 1px solid #fff;
+    border: 1px solid #000;
     background-color: #fff;
     text-align: center;
     border-radius: 20px;
@@ -189,11 +218,11 @@ body {
 .quiz__question {
     font-size: 70px;
     font-weight: bolder;
-    margin: 120px 0 0 0;
+    margin: 100px 0 0 0;
 }
 
 /* main_start */
-.quiz__start a {
+/* .quiz__start a {
     display: inline-block;
     margin-top: 100px;
     padding: 10px;
@@ -209,7 +238,7 @@ body {
     color: #FECCBE;
     cursor: pointer;
 
-}
+} */
 
 /* main__answer */
 .quiz__footer {
@@ -221,7 +250,7 @@ body {
 .quiz__footer input {
     width: 432px;
     height: 80px;
-    border: 3px solid #FECCBE;
+    border: 3px dashed #d9d9d9;
     border-radius: 20px;
     margin-top: 50px;
     text-align: center;
@@ -230,31 +259,28 @@ body {
 .quiz__footer .quiz__answer {
     width: 432px;
     height: 80px;
-    border: 3px solid #FECCBE;
+    border: 3px dashed #d9d9d9;
     border-radius: 20px;
-    
-}
-
-.feedback {
-    font-size: 24px; /* 원하는 크기로 조절하세요 */
-    color: red; /* 원하는 색상으로 조절하세요 */
-    font-weight: bold; /* 원하는 글꼴 두께로 조절하세요 */
-    margin-bottom: 20px;
 }
 .box__footer {
     margin-top: 50px;
-    
+    /* margin-bottom: 50px; */
+}
+.box__footer div {
+    margin: 0 auto;
+    font-size: 30px;
+    margin-top: 50px;
 }
 .box__footer button {
     font-weight: bold;
     color: #fff;
-    border: 1px solid #FECCBE;
-    background-color: #FECCBE;
+    border: 1px solid #d9d9d9;
+    background-color: #000;
     border-radius: 50px;
 }
 .box__footer button:hover {
-    background-color: #fff;
-    color: #FECCBE;
+    background-color: #c4c4c4;
+    color: #000;
     cursor: pointer;
 }
 .box__footer button.quiz__confirm {
@@ -269,24 +295,68 @@ body {
     font-size: 30px;
     margin-left: 20px;
 }
-.box__footer div {
-    margin: 0 auto;
-    font-size: 30px;
-    margin-top: 50px;
-    margin-bottom: 10px;
-}
 #score {
     font-size: 30px;
+    margin: 0 auto;
+    margin-top: 800px;
+    margin-bottom: 10px;
 }
-/* footer */
-.footer__desc {
-    font-size: 30px;
-    margin-top: 5px;
-    text-align: center;
+
+
+
+
+/* good or bag */
+.quiz__wrap > .quiz.good {
+    position: relative;
+}
+.quiz__wrap > .quiz.good::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    border: 10px solid red;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px; 
+    top: 20px;
+    z-index: 100;
+}
+.quiz__wrap > .quiz.bad {
+    position: relative;
+}
+.quiz__wrap > .quiz.bad::before {
+    content: '';
+    width: 150px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    border-radius: 30px;
+    transform: rotate(45deg);
+    z-index: 100;
+}
+.quiz__wrap > .quiz.bad::after {
+    content: '';
+    width: 150px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    border-radius: 30px;
+    transform: rotate(-45deg);
+    z-index: 100;
+}
+
+/* .quiz__box 오답알려주기 */
+.feedback {
+    font-size: 24px;
+    color: red; 
+    font-weight: bold;
+    margin-bottom: 20px ;
 }
 
 @media(max-width: 1205px){
-    
     .quiz__header {
         height: 50px;
     }
@@ -302,13 +372,31 @@ body {
     }
     .quiz_img > img {
         width: 580px;
+        margin-top: 0px;
     }
     .quiz__box {
         width: 580px;
     }
+    .desc {
+        display: none;
+    }
 }
-@media(max-width: 800px){
+@media(max-width: 1000px){
     .quiz__main {
         display: block;
+    }
+    .quiz__box {
+        height: 400px;
+        margin: 0 auto;
+    }
+    .quiz__question {
+        margin-top: 10px;
+    }
+    .quiz__footer input {
+        margin-top: 10px;
+    }
+    .quiz_img {
+        margin-bottom: 10px;
+        margin: 0 auto;
     }
 }
