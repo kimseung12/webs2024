@@ -389,16 +389,19 @@ body {
         text-align: center;
     }
     .quiz_img {
-        width: 480px;
+        width: 100%
     }
     .quiz_img > img {
-        width: 480px;
+        width: 100%;
         margin-top: 0px;
         border-radius: 20px;
         padding: 10px;
     }
     .quiz__box {
-        width: 480px;
+        width: 100%;
+    }
+    .quiz__footer input {
+        width: 100%;
     }
 }
 @media(max-width: 1050px){
