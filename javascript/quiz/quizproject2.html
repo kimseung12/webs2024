@@ -535,7 +535,7 @@ function checkAnswer() {
 
         feedbackDiv.textContent = "정답입니다";
         feedbackDiv.classList.add("feedback2");
-        document.querySelector(".quiz__footer").appendChild(feedbackDiv);
+        document.querySelector(".quiz__box").appendChild(feedbackDiv);
 
         setTimeout(function () {
             feedbackDiv.remove();
@@ -547,7 +547,7 @@ function checkAnswer() {
         
         feedbackDiv.textContent = "땡! 정답은 " + quizData[currentQuizIndex].answer + " 입니다.";
         feedbackDiv.classList.add("feedback");
-        document.querySelector(".quiz__footer").appendChild(feedbackDiv);
+        document.querySelector(".quiz__box").appendChild(feedbackDiv);
 
         setTimeout(function () {
             feedbackDiv.remove();
