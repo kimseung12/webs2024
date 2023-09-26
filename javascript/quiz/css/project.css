@@ -209,7 +209,7 @@ body {
     padding: 10px;
     margin-top: 110px; */
 }
-.desc {
+.footer__desc {
     font-size: 30px;
     margin: 30px 25px 50px 25px;
     text-align: center;
@@ -372,13 +372,60 @@ body {
     font-weight: bold;
     margin-bottom: 20px ;
 }
-@media(max-width: 1400px){
-    .desc {
-        display: none;
+@media (max-width: 1700px){
+    .quiz__wrap {
+        width: 90%;
+        margin: 0 auto;
+        justify-content: center;    
+    }
+    .quiz_img {
+        width: 45%;
+    }
+    .quiz__box {
+        width: 45%;
+    }
+    .footer__desc {
+        font-size: 30px;
     }
 }
+@media (max-width: 1600px){
+    .quiz_img {
+        width: 48.5%;
+    }
+    .quiz__box {
+        width: 48.5%;
+    }
+    .footer__desc {
+        font-size: 25px;
+    }
+}
+@media (max-width: 1380px){
+    .quiz__header {
+        width: 100%;
+        height: 180px;
+    }
+    .quiz__header span {
+        font-size: 80px;
+        text-align: center;
+    }
+    .quiz__question {
+        font-size: 60px;
+    }
+    .footer__desc {
+        font-size: 20px;
+    }
+}
+/* @media (max-width: 1470px){
+    .quiz_img {
+        width: 600px;
+    }
+    .quiz__box {
+        width: 600px;
+    }
+} */
 @media(max-width: 1205px){
     .quiz__header {
+        width: 100%;
         height: 50px;
     }
     .quiz__question {
@@ -388,27 +435,24 @@ body {
         font-size: 30px;
         text-align: center;
     }
-    .quiz_img {
-        width: 100%
-    }
     .quiz_img > img {
-        width: 100%;
         margin-top: 0px;
         border-radius: 20px;
         padding: 10px;
     }
-    .quiz__box {
-        width: 100%;
-    }
     .quiz__footer input {
-        width: 100%;
+        width: 90%;
+    }
+    .footer__desc {
+        display: none;
     }
 }
-@media(max-width: 1050px){
+@media(max-width: 1000px){
     .quiz__main {
         display: block;
     }
     .quiz__box {
+        width: 90%;
         height: 400px;
         margin: 0 auto;
     }
@@ -419,6 +463,7 @@ body {
         margin-top: 10px;
     }
     .quiz_img {
+        width: 90%;
         margin-bottom: 10px;
         margin: 0 auto;
     }
