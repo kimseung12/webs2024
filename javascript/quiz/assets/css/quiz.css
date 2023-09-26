@@ -76,6 +76,9 @@ body {
     background-repeat: no-repeat;
     position: relative;
 }
+body.fixed {
+    background-attachment: fixed;
+}
 body::after {
     content: '';
     width: 100%;
@@ -564,4 +567,17 @@ body::after {
     .quiz__confirm {
         padding: 13px;
     }
+}
+/* cbt */
+.cbt__box {
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgb(0,0,0,10);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
 }
