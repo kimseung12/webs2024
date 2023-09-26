@@ -532,6 +532,15 @@ function checkAnswer() {
         
         score++;
         document.getElementById("score").textContent = score;
+
+        feedbackDiv.textContent = "정답입니다";
+        feedbackDiv.classList.add("feedback2");
+        document.querySelector(".quiz__box").appendChild(feedbackDiv);
+
+        setTimeout(function () {
+            feedbackDiv.remove();
+             // 일정 시간 후에 다음 문제로 자동으로 넘어감
+        }, 500); // 2초 후에 제거 및 다음 문제로 이동
         
     } else {
         // 오답일 때 여기에 추가 동작을 구현할 수 있습니다.
@@ -543,7 +552,7 @@ function checkAnswer() {
         setTimeout(function () {
             feedbackDiv.remove();
             nextQuestion(); // 일정 시간 후에 다음 문제로 자동으로 넘어감
-        }, 2000); // 2초 후에 제거 및 다음 문제로 이동
+        }, 1500); // 2초 후에 제거 및 다음 문제로 이동
         return; // 오답 처리 후 함수 종료
     }
 
