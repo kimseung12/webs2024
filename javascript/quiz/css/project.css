@@ -389,16 +389,16 @@ body {
         text-align: center;
     }
     .quiz_img {
-        width: 580px;
+        width: 480px;
     }
     .quiz_img > img {
-        width: 580px;
+        width: 480px;
         margin-top: 0px;
         border-radius: 20px;
         padding: 10px;
     }
     .quiz__box {
-        width: 580px;
+        width: 480px;
     }
 }
 @media(max-width: 1050px){

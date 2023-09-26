@@ -528,8 +528,6 @@ function checkAnswer() {
 
     if (userAnswer === correctAnswer) {
         // 정답을 맞췄을 때
-        // alert("정답입니다.");
-        
         score++;
         document.getElementById("score").textContent = score;
 
@@ -539,8 +537,7 @@ function checkAnswer() {
 
         setTimeout(function () {
             feedbackDiv.remove();
-             // 일정 시간 후에 다음 문제로 자동으로 넘어감
-        }, 500); // 2초 후에 제거 및 다음 문제로 이동
+        }, 500); // 1초 후에 제거 및 다음 문제로 이동
         
     } else {
         // 오답일 때 여기에 추가 동작을 구현할 수 있습니다.
