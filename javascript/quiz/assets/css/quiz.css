@@ -382,6 +382,13 @@ body::after {
     line-height: 1.5;
     color: #666;
 }
+.quiz__desc2 {
+    border: 1px solid #eaeaea;
+    padding: 20px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #666;
+}
 .quiz__desc::before {
     content: "😁 설명  ";
 }
