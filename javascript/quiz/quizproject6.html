@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 이벤트</title>
+    <title>LEVEL5</title>
 
     <link rel="stylesheet" href="css/project.css">
 
@@ -36,9 +37,10 @@
                         </div>
                         <div class="box__footer">
                             <button class="quiz__confirm">정답 확인</button>
-                            <button class="quiz__Next none">다음</button>
-                            <div>점수: <span id="score">0</span></div>
-                        </div>
+                            <a href="quizproject7.html" class="quiz__Next none">ENG</a>
+                            <a href="quizproject.html" class="quiz__reset none">START</a>
+                        <div>점수: <span id="score">0</span></div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -51,55 +53,54 @@
         const quizData = [
             {
                 "question": "내가 누구게요~?",
-                "answer": "도널드덕",
-                "imageURL": "assets/img/img1-min.png"
+                "answer": "고죠 사토루",
+                "imageURL": "assets/img/img19-min.png"
             },
             {
                 "question": "내가 누구게요~?",
-                "answer": "말레피센트",
-                "imageURL": "assets/img/img2-min.png"
+                "answer": "플래시",
+                "imageURL": "assets/img/img32-min.png"
             },
             {
                 "question": "내가 누구게요~?",
-                "answer": "뮬란",
-                "imageURL": "assets/img/img3-min.png"
+                "answer": "덱스터",
+                "imageURL": "assets/img/img34-min.png"
             },
             {
                 "question": "내가 누구게요~?",
-                "answer": "미키마우스",
-                "imageURL": "assets/img/img4-min.png"
+                "answer": "다크시니",
+                "imageURL": "assets/img/img42-min.png"
             },
             {
                 "question": "내가 누구게요~?",
-                "answer": "버즈",
-                "imageURL": "assets/img/img5-min.png"
+                "answer": "한자와",
+                "imageURL": "assets/img/img44-min.png"
             },
             {
                 "question": "내가 누구게요~?",
-                "answer": "버럭이",
-                "imageURL": "assets/img/img6-min.png"
+                "answer": "가오나시",
+                "imageURL": "assets/img/img45-min.png"
             },
             {
                 "question": "내가 누구게요~?",
-                "answer": "스티치",
-                "imageURL": "assets/img/img7-min.png"
+                "answer": "도도리아",
+                "imageURL": "assets/img/img48-min.png"
             },
             {
                 "question": "내가 누구게요~?",
-                "answer": "슬픔이",
-                "imageURL": "assets/img/img8-min.png"
+                "answer": "코코",
+                "imageURL": "assets/img/img77-min.png"
             },
             {
                 "question": "내가 누구게요~?",
-                "answer": "지니",
-                "imageURL": "assets/img/img9-min.png"
+                "answer": "커리지",
+                "imageURL": "assets/img/img85-min.png"
             },
             {
                 "question": "내가 누구게요~?",
-                "answer": "엘사",
-                "imageURL": "assets/img/img10-min.png"
-            },
-           
+                "answer": "번견맨",
+                "imageURL": "assets/img/img92-min.png"
+            }
         ];
 
         let currentQuizIndex = 0; // 현재 퀴즈 인덱스
@@ -113,6 +114,9 @@
         const quizConfirmButton = document.querySelector(".quiz__confirm");
         const quizNextButton = document.querySelector(".quiz__Next");
         const quizAnswer = document.querySelector(".quiz__answer")
+        const quizReset = document.querySelector(".quiz__reset")
+        const quizInput = document.querySelector(".quiz__footer input");
+        
 
         // 초기 퀴즈 데이터를 표시합니다.
         displayQuizData();
@@ -121,7 +125,7 @@
         quizConfirmButton.addEventListener("click", checkAnswer);
 
         // 다음 버튼 클릭 이벤트 핸들러를 등록합니다.
-        quizNextButton.addEventListener("click", nextQuestion);
+        // quizNextButton.addEventListener("click", nextQuestion);
 
         // 정답 입력 필드에서 Enter 키를 눌렀을 때도 정답 확인 함수를 호출합니다.
         quizAnswerInput.addEventListener("keyup", function (event) {
@@ -146,6 +150,7 @@
         initializeQuiz();
 
         // 정답 확인 함수를 정의합니다.
+        
         function checkAnswer() {
             const userAnswer = quizAnswerInput.value.trim().toLowerCase(); // 입력한 답을 소문자로 변환
             const correctAnswer = quizData[currentQuizIndex].answer.replace(/\s/g, "").toLowerCase(); // 정답을 소문자로 변환
@@ -153,7 +158,7 @@
             if (userAnswer === correctAnswer) {
                 // 정답을 맞췄을 때
                 // alert("정답입니다.");
-                score++;
+                score = score+10;
                 document.getElementById("score").textContent = score;
                 feedbackDiv.textContent = "정답입니다";
                 feedbackDiv.classList.add("feedback2");
@@ -176,12 +181,15 @@
             if (currentQuizIndex < quizData.length) {
                 displayQuizData(); // 새로운 퀴즈 데이터 표시
             } else {
-                alert("퀴즈가 종료되었습니다.");
+                // alert("퀴즈가 종료되었습니다.");
+                quizNextButton.classList.remove("none");
+                quizConfirmButton.classList.add("none");
             }
             // 입력 필드 초기화
             quizAnswerInput.value = "";
             quizAnswerInput.classList.remove("correct");
-        }
+            } 
+           
 
         // 다음 문제로 이동하는 함수를 정의합니다.
         function nextQuestion() {
@@ -190,10 +198,27 @@
                 displayQuizData(); // 새로운 퀴즈 데이터 표시
             } else {
                 alert("퀴즈가 종료되었습니다.");
+                if (score >= 50){
+                    quizNextButton.classList.remove("none");
+                    quizConfirmButton.classList.add("none");
+                } else {
+                    quizReset.classList.remove("none");
+                    quizConfirmButton.classList.add("none");
+                }
             }
             // 입력 필드 초기화
             quizAnswerInput.value = "";
         }
+
+        quizReset.addEventListener("click", function () {
+            // 점수 초기화
+            score = 0;
+            document.getElementById("score").textContent = score;
+            // 리셋 버튼을 감춥니다.
+            quizReset.classList.add("none");
+            // 다시 퀴즈를 시작합니다.
+            initializeQuiz();
+        });
 
         // 퀴즈 데이터를 화면에 표시하는 함수를 정의합니다.
         function displayQuizData() {
@@ -202,46 +227,7 @@
             quizImage.src = currentQuiz.imageURL;
             quizQuestion.textContent = currentQuiz.question;
         }
-
     </script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 </body>
 
 </html>
