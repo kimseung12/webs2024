@@ -39,8 +39,8 @@
                     <fieldset>
                         <legend class="blind">게시글 작성하기</legend>
                         <div>
-                            <label for="boradTitle">제목</label>
-                            <input type="text" id="boradTitle" name="boradTitle" class="input__style">
+                            <label for="boardTitle">제목</label>
+                            <input type="text" id="boardTitle" name="boardTitle" class="input__style">
                         </div>
                         <div>
                             <label for="boardContents">내용</label>
