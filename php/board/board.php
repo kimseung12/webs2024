@@ -112,7 +112,7 @@
 
                 echo "<tr>";
                 echo "<td>".$info['boardID']."</td>";
-                echo "<td>".$info['boardTitle']."</td>";
+                echo "<td><a href='boardView.php?boardID={$info['boardID']}'>".$info['boardTitle']."</a></td>";
                 echo "<td>".$info['youName']."</td>";
                 echo "<td>".date('Y-m-d', $info['regTime'])."</td>";
                 echo "<td>".$info['boardView']."</td>";
@@ -150,11 +150,21 @@
     if($startPage < 1) $startPage = 1;
     if($endPage >= $boardTotalCount) $endPage = $boardTotalCount;
 
-    // 처음으로 가는 링크
-    echo "<li class='first'><a href='board.php?page=1'>처음으로</a></li>";
+    // 처음으로/이전
+    if($page !=1){
+        $prevPage = $page - 1;
+        echo "<li class='first'><a href='board.php?page=1'>처음으로</a></li>";
+        echo "<li class='prev'><a href='board.php?page=$prevPage'>이전</a></li>";
+    }
+
+    // // 처음으로 가는 링크
+    // echo "<li class='first'><a href='board.php?page=1'>처음으로</a></li>";
         
-    // 이전 페이지로 가는 링크
-    echo "<li class='prev'><a href='board.php?page=$prevPage'>이전페이지</a></li>";
+    // // 이전 페이지로 가는 링크
+    // if($page > 1) {
+    //     echo "<li class='prev'><a href='board.php?page=$prevPage'>이전</a></li>";
+    //     echo "<li class='first'><a href='board.php?page=1'>처음으로</a></li>";
+    // }
 
     // 페이지
     for($i=$startPage; $i<=$endPage; $i++){
@@ -168,11 +178,21 @@
             echo "<li><a href='board.php?page={$i}'>$i</a></li>";
         }
     }
-    // 다음 페이지로 가는 링크
-    echo "<li class='next'><a href='board.php?page=$nextPage'>다음페이지</a></li>";
+    // // 다음 페이지로 가는 링크
+    // echo "<li class='next'><a href='board.php?page=$nextPage'>다음</a></li>";
         
-    // 마지막으로 가는 링크
-    echo "<li class='last'><a href='board.php?page=$boardTotalCount'>마지막으로</a></li>";
+    // // 마지막으로 가는 링크
+    // if($page < 30 ) {
+    // echo "<li class='last'><a href='board.php?page=$boardTotalCount'>마지막으로</a></li>";
+    // echo "<li class='next'><a href='board.php?page=$nextPage'>다음</a></li>";
+    // }
+
+    // 마지막으로/다음
+    if($page != $boardTotalCount){
+        $nextPage = $page + 1;
+        echo "<li class='next'><a href='board.php?page=$nextPage'>다음</a></li>";
+        echo "<li class='last'><a href='board.php?page=$boardTotalCount'>마지막으로</a></li>";
+    }
 
 ?>
                     <!-- <li class="first"><a href="#">처음으로</a></li>

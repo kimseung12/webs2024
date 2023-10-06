@@ -65,12 +65,6 @@
     justify-content: center;
 }
 
-.board__pages .prev {
-    margin-right: 30px; 
-}
-.board__pages .next {
-    margin-left: 30px; 
-}
 .board__pages li a {
     border: 1px solid var(--black500);
     padding: 10px 12px;
@@ -108,6 +102,10 @@
     padding: 15px;
     border-bottom: 1px solid var(--black400);
     white-space: pre-line;
+}
+.board__view table tr:last-child td {
+    height: 500px;
+    vertical-align: top;
 }
 @media (max-width: 960px){
     .board__search {
