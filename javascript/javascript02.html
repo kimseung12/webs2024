@@ -64,6 +64,8 @@
                     <li><a href="#sample19">19. 객체 : 데이터 불러오기 : for in</a></li>
                     <li><a href="#sample20">20. 객체 : 데이터 불러오기 : 객체 펼침 연산자</a></li>
                     <li><a href="#sample21">21. 객체 : 데이터 불러오기 : 객체 구조 분해 할당</a></li>
+                    <li><a href="#sample22">22. 파일 : 서버 데이터 불러오기 : XMLHttpRequest</a></li>
+                    <li><a href="#sample23">23. 파일 : 서버 데이터 불러오기 : fetch API</a></li>
                 </ul>
             </div>
                 <!-- //main__menu -->
@@ -777,7 +779,84 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample20 -->
+                <!-- //sample21 -->
+
+                <div id="sample22" class="sample">
+                    <h3>22. 파일 : 서버 데이터 불러오기 : XMLHttpRequest</h3>
+                    <p>XMLHttpRequest 예시입니다.</p>
+<pre><code class="language-js">{
+    var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json", true);
+        
+        xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                        var responseData = xhr.responseText;
+                        var jsonData = JSON.parse(responseData);
+    
+                        console.log(jsonData);
+                } else if (xhr.readyState === 4) {
+                        console.error("데이터 불러오기 오류: " + xhr.status);
+                }
+        };
+
+        xhr.send();
+}
+</code></pre>
+                    <p class="desc">1. var xhr = new XMLHttpRequest();: 이 줄은 XMLHttpRequest 객체의 새 인스턴스를 생성합니다. 이 개체는 서버에 HTTP 요청을 보내고 응답을 처리하는 데 사용됩니다.<br>
+                        2. xhr.open("GET", "https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json", true);: 여기서는 openHTTP 요청을 구성하는 방법을 사용합니다. 요청 유형(이 경우 GET), 가져오려는 리소스의 URL(이 경우 JSON 파일) 및 true요청을 비동기식으로 만드는 세 번째 인수로 지정합니다.<br>
+                        3. xhr.onreadystatechange: XMLHttpRequest 객체의 상태 변경을 수신하는 이벤트 핸들러입니다. 상태가 변경되면 응답을 처리하기 위해 이 함수가 호출됩니다. 속성 readyState은 요청 상태를 나타내고 xhr.status응답의 HTTP 상태 코드를 나타냅니다.<br>
+                        4. 함수 내부에는 xhr.onreadystatechange조건부 검사가 있습니다.<br>   
+                        xhr.readyState4(요청이 완료되었음을 의미)이고 xhr.status200(요청이 성공했음을 의미)이면 응답이 성공적으로 수신되었음을 의미합니다.<br>
+                        이 경우 xhr.responseTextJSON 데이터가 문자열로 포함된 를 사용하여 응답 데이터를 검색합니다.<br>
+                        그런 다음 JSON.parse(responseData)JSON 문자열을 JavaScript 개체로 구문 분석하는 데 사용됩니다.<br>
+                        readyState4이지만 status200이 아닌 경우 콘솔에 오류 메시지를 기록하여 데이터를 가져오는 데 문제가 있음을 나타냅니다.<br>
+                        xhr.send();: 이 줄은 JSON 데이터를 검색하기 위해 서버에 HTTP 요청을 보냅니다.             
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample22 -->
+
+                <div id="sample23" class="sample">
+                    <h3>23. 파일 : 서버 데이터 불러오기 : fetch API</h3>
+                    <p>fetch API 예시입니다.</p>
+<pre><code class="language-js">{
+    fetch("https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json")
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log(data)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+}
+</code></pre>
+                    <p class="desc">1. fetch("https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json"): 이 fetch함수는 원격 서버에 있는 JSON 리소스인 지정된 URL에 대한 HTTP GET 요청을 시작하는 데 사용됩니다. 이 함수는 Promise를 반환합니다.<br>
+                    2. .then(response => { return response.json(); }): 요청을 시작한 후 .then()반환된 Promise에서 호출됩니다. 이 메서드는 Promise가 해결될 때 실행될 콜백 함수를 사용합니다. 이 경우 response객체를 수신합니다.<br>
+                    response.json()응답 본문을 JSON으로 구문 분석하기 위해 호출됩니다. 이 메서드는 또한 구문 분석된 JSON 데이터로 해결되는 Promise를 반환합니다.<br>
+                    3. .then(data => { console.log(data) }): .then()파싱된 JSON 데이터를 처리하기 위해 또 다른 블록이 사용됩니다. 이 블록은 dataJSON 데이터를 JavaScript 개체로 포함하는 변수를 받습니다.<br>
+                    이 블록 내에서는 console.log(data)JSON 데이터를 콘솔에 기록하여 디버깅이나 추가 처리를 위해 표시하는 데 사용됩니다.<br> 
+                    4. .catch(error => { console.log(error) }).catch(): fetch 작업이나 JSON 파싱 시 발생할 수 있는 오류를 처리하는 블록 입니다 .<br>
+                    약속 체인의 어느 지점에서든 오류가 발생하면(예: 네트워크 문제, 잘못된 JSON) 이 블록이 실행됩니다. 매개 error변수에는 오류에 대한 정보가 포함되어 있습니다.<br>
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample23 -->
 
             </div>
             <!-- //main__sample -->
@@ -1042,6 +1121,39 @@
             console.log(z1);
         }
 
+        // 22. 파일 : 서버 데이터 불러오기 : XMLHttpRequest
+        
+        // var xhr = new XMLHttpRequest();
+        // xhr.open("GET", "https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json", true);
+        
+        // xhr.onreadystatechange = function () {
+        //         if (xhr.readyState === 4 && xhr.status === 200) {
+        //                 var responseData = xhr.responseText;
+        //                 var jsonData = JSON.parse(responseData);
+    
+        //                 console.log(jsonData);
+        //         } else if (xhr.readyState === 4) {
+        //                 console.error("데이터 불러오기 오류: " + xhr.status);
+        //         }
+        // };
+
+        // xhr.send();
+
+        // 23
+        {
+            fetch("https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json")
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        }
+        
+        
     </script>
 </body>
 </html>

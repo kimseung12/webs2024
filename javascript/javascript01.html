@@ -64,11 +64,12 @@
                     <li><a href="#sample19">19. 객체 : 데이터 저장(키와값) : 표현방법8 : 객체 + 함수가 있는 방식</a></li>
                     <li><a href="#sample20">20. 객체 : 데이터 저장(키와값) : 표현방법9 : 객체 구조 분해 할당</a></li>
                     <li><a href="#sample21">21. 객체 : 데이터 저장(키와값) : 표현방법10 : 객체 펼침연산자</a></li>
+                    <li><a href="#sample22">22. 파일 : 데이터 교환(JSON)</a></li>
                 </ul>
                 
                 <ul>
-                    <li><a href="#sample22">++ 지역변수/전역변수</a></li>
-                    <li><a href="#sample23">++ 연산자(산술/대입/증감/비교/논리/비트)</a></li>
+                    <li><a href="#sample23">++ 지역변수/전역변수</a></li>
+                    <li><a href="#sample24">++ 연산자(산술/대입/증감/비교/논리/비트)</a></li>
                     <li><a href="#">++ 자료형(숫자/문자열/논리/null/undefined/Object/Array/Function)</a></li>
                 </ul>
             </div>
@@ -828,6 +829,37 @@
                 <!-- //sample21 -->
 
                 <div id="sample22" class="sample">
+                    <h3>22. 파일 : 데이터 교환(JSON)</h3>
+                    <p>json파일로 데이터 교환</p>
+<pre><code class="language-js"> // json 데이터를 객체로 변환
+    const jsonString = '{"name": "webs", "age": "30"}';
+    const jsonObject = JSON.parse(jsonString);
+    console.log(jsonObject.name); 
+    
+    //webs
+    
+    // 객체를 json 데이터로 변환
+    const personString = {name: "webs", age: 30};
+    const jsonPerson = JSON.stringify(person);
+    console.log(jsonPerson);
+
+    // '{"name": "webs", "age": "30"}'
+</code></pre>
+                    <p class="desc"><br>
+                                    <br>
+                                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample22 -->
+
+                <div id="sample23" class="sample">
                     <h3>지역변수 + 전역변수</h3>
                     <p>
                         지역 변수(Local Variable)와 전역 변수(Global Variable)는 프로그래밍에서 변수의 범위(scope)를 나타내는 중요한 개념입니다.
@@ -878,9 +910,9 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample22 -->
+                <!-- //sample23 -->
 
-                <div id="sample23" class="sample">
+                <div id="sample24" class="sample">
                     <h3>연산자 : 산술 연산자</h3>
                     <p>산술 연산자에는 더하기(+), 빼기(-), 곱하기(*), 나누기(/), 나머지(%)가 있습니다.<br>
                     산술 연산자로 연산을 하기 위해서는 연산 대상 데이터가 반드시 2개 있어야합니다.</p>
@@ -913,9 +945,9 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample23 -->
+                <!-- //sample24 -->
 
-                <div id="sample23" class="sample">
+                <div id="sample25" class="sample">
                     <h3>연산자 : 산술 연산자</h3>
                     <p>산술 연산자에는 더하기(+), 빼기(-), 곱하기(*), 나누기(/), 나머지(%)가 있습니다.<br>
                     산술 연산자로 연산을 하기 위해서는 연산 대상 데이터가 반드시 2개 있어야합니다.</p>
@@ -985,8 +1017,9 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample23 -->
-                <div id="sample24" class="sample">
+                <!-- //sample25 -->
+
+                <div id="sample26" class="sample">
                     <h3>연산자 : 문자 결합 연산자</h3>
                     <p>문자 결합 연산자는 연산 대상 데이터가 문자형 데이터입니다.<br>
                     여러개의 문자를 하나의 문자형 데이터로 결합할때 사용합니다</p>
@@ -1010,9 +1043,9 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample24 -->
+                <!-- //sample26 -->
                 
-                <div id="sample25" class="sample">
+                <div id="sample27" class="sample">
                     <h3>연산자 : 대입 연산자</h3>
                     <p>대입 연사자(=)는 연산된 데이터를 변수에 저장할 때 사용합니다.<br>
                     복합 대입 연산자(+=, -=, *=, /=, %=)는 산술 연산자와 대입 연산자가 복합적으로 적용된 것을 말합니다.<br>
@@ -1042,8 +1075,9 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample25 -->
-                <div id="sample26" class="sample">
+                <!-- //sample27 -->
+
+                <div id="sample28" class="sample">
                     <h3>연산자 : 증감 연산자</h3>
                     <p>증감 연산자는 변수의 값을 1만큼 증가시키거나 감소시키는데 사용됩니다.
                     </p>
@@ -1079,9 +1113,9 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample26 -->
+                <!-- //sample28 -->
 
-                <div id="sample27" class="sample">
+                <div id="sample29" class="sample">
                     <h3>연산자 : 비교 연산자</h3>
                     <p>
                         두 데이터를 "크다, 작다, 같다"와 같이 비교할 떄 사용하는 연산자입니다.<br>
@@ -1121,9 +1155,9 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample27 -->
+                <!-- //sample29 -->
 
-                <div id="sample28" class="sample">
+                <div id="sample30" class="sample">
                     <h3>연산자 : 논리 연산자</h3>
                     <p> 
                         논리 연산자에는 ||(or), &&(and), !(not)가 있습니다<br>
@@ -1160,9 +1194,9 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample28 -->
+                <!-- //sample30 -->
 
-                <div id="sample29" class="sample">
+                <div id="sample31" class="sample">
                     <h3>연산자 우선순위</h3>
                     <p>비교 연산자와 논리연산자가 함께 포함되어 있다면 연산자 우선순위에 따라 비교 연산이 먼저 실행되고 그 다음 논리 연산자가 실행됩니다.</p>
 <pre><code class="language-js">{
@@ -1199,9 +1233,9 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample29 -->
+                <!-- //sample31 -->
 
-                <div id="sample30" class="sample">
+                <div id="sample32" class="sample">
                     <h3>연산자 : 삼항 조건 연산자</h3>
                     <p>삼항 조건 연산자는 조건식의 결과에 따라 실행 결과가 달라지는 삼항연산자로, 연산을 위해 피연산자 3개 필요합니다.</p>
 <pre><code class="language-js">{
@@ -1228,9 +1262,9 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample30 -->
+                <!-- //sample32 -->
 
-                <div id="sample31" class="sample">
+                <div id="sample33" class="sample">
                     <h3>연산자 : 비트 연산자</h3>
                     <p>비트 연산자는 비트 단위로 데이터를 조작하는 데 사용되며, 주로 정수 데이터의 비트 패턴을 조작하거나 검사하는 데 활용됩니다</p>
 <pre><code class="language-js">{
@@ -1253,7 +1287,7 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample31 -->
+                <!-- //sample33 -->
 
                 
 
@@ -1620,24 +1654,39 @@
             console.log(obj3);
         }
 
+        // 22
+        // json 데이터를 객체로 변환
+        const jsonString = '{"name": "webs", "age": "30"}';
+        const jsonObject = JSON.parse(jsonString);
+        console.log(jsonObject.name); 
+        
+        //webs
+        
+        // 객체를 json 데이터로 변환
+        const personString = {name: "webs", age: 30};
+        const jsonPerson = JSON.stringify(person);
+        console.log(jsonPerson);
+
+        // '{"name": "webs", "age": "30"}'
+
         // ++ 지역변수/전역변수
         {
-    let x = 100;            //전역변수
-    let y = 200;            //전역변수
-    let z = "javascript";   //전역변수
+        let x = 100;            //전역변수
+        let y = 200;            //전역변수
+        let z = "javascript";   //전역변수
 
-    console.log("함수밖1:" + x, y, z);
+        console.log("함수밖1:" + x, y, z);
 
-    function func(){
-        let x = 300;        //지역변수
-        y += 400;           //전역변수 y의 값에 400을 추가
-        let z = "jquery";   //전역변수 z의 값에 문자열 "jquery"를 추가
-        
-        console.log("함수안:" + x, y, z);
-    }
-    func();
+        function func(){
+            let x = 300;        //지역변수
+            y += 400;           //전역변수 y의 값에 400을 추가
+            let z = "jquery";   //전역변수 z의 값에 문자열 "jquery"를 추가
+            
+            console.log("함수안:" + x, y, z);
+        }
+        func();
 
-    console.log("함수밖2:" + x, y, z);
+        console.log("함수밖2:" + x, y, z);
 }
         // ++ 연산자(산술/대입/증감/비교/논리/비트)
         // ++ 자료형(숫자/문자열/논리/null/undefined/Object/Array/Function)
