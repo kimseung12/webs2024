@@ -1,40 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <?php
+    
     include "../connect/connect.php";
     include "../connect/session.php";
 
+    
+    $boardID = $_POST['boardID'];
     $boardTitle = $_POST['boardTitle'];
     $boardContents = $_POST['boardContents'];
+    $boardPass = $_POST['boardPass']; 
     $memberID = $_SESSION['memberID'];
 
+    // echo $boardID, $boardTitle, $boardContents, $boardPass, $memberID;
+
+    
     $boardTitle = $connect -> real_escape_string($boardTitle);
     $boardContents = $connect -> real_escape_string($boardContents);
+    $boardPass = $connect -> real_escape_string($boardPass);
 
-    if (isset($_GET['boardID'])) {
-        $boardID = $_GET['boardID'];
-    
-        // 게시물을 가져옵니다.
-        $sql = "SELECT * FROM board WHERE boardID = $boardID";
-        $result = $connect->query($sql);
-    
-        if ($result && $result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $boardTitle = $row['boardTitle'];
-            $boardContents = $row['boardContents'];
-    
-            // 게시물 수정 폼을 생성합니다.
-            echo "<form action='update.php' method='POST'>";
-            echo "<input type='hidden' name='boardID' value='$boardID'>";
-            echo "제목: <input type='text' name='boardTitle' value='$boardTitle'><br>";
-            echo "내용: <textarea name='boardContents'>$boardContents</textarea><br>";
-            echo "<input type='submit' value='수정'>";
-            echo "</form>";
+    $sql = "SELECT * FROM members WHERE memberID = {$memberID}";
+    $result = $connect -> query($sql);
+
+    if($result){
+        $info = $result -> fetch_array(MYSQLI_ASSOC);
+
+        if($info['memberID'] === $memberID && $info['youPass'] === $boardPass){
+            //수정
+            $sql = "UPDATE board SET boardTitle = '{$boardTitle}', boardContents = '{$boardContents}' WHERE boardID = {$boardID}";
+            $connect -> query($sql);
+            echo "<script>alert('게시글이 성공적으로 수정되었습니다.')</script>";
+            echo '<script>window.location.href = "board.php";</script>';
         } else {
-            echo "게시물을 찾을 수 없습니다.";
+            echo "<script>alert('비밀번호가 틀렸습니다. 다시 한번 확인해주세요!')</script>";
+            echo "<script>window.history.back()</script>";
         }
     } else {
-        echo "게시물 ID가 전달되지 않았습니다.";
+        echo "<script>alert('관리자에게 문의하세요!')</script>";
     }
+
     
-    // 업데이트 후 게시판 페이지로 이동
-    // echo "<script>window.location.href='board.php';</script>";
 ?>
+</body>
+</html>

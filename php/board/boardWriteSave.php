@@ -38,7 +38,8 @@
             $connect -> query($sql);
             // if ($connect->query($sql)) {
                 // 글 작성이 성공한 경우 메시지를 표시하고 board.php로 리디렉션합니다.
-            echo "<script>alert('글이 성공적으로 작성되었습니다.'); window.location.href = 'board.php';</script>";
+                echo "<script>alert('게시글이 성공적으로 작성되었습니다.')</script>";
+                echo '<script>window.location.href = "board.php";</script>';
         }
         
     } 
