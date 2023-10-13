@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4조 - 인덱스</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin: 0 auto;
+      }
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      .html,
+      .php,
+      .figma {
+        width: 33.333%;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        /* padding: 40px; */
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+
+      .wrap {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 70%;
+      }
+
+      .wrap__title {
+        color: #285A5B;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 40px;
+      }
+      .wrap__title:hover {
+        color: #FFB84D;
+      }
+      .notion a { 
+        text-decoration: underline;
+        text-underline-position: unset;
+        font-size: 25px;
+        margin-left: 250px;
+        color: #285A5B;
+        font-weight: 400;
+      }
+      /* 전체 */
+      .AllTopDown {
+        padding: 60px 0;
+      }
+
+      .wrap div:nth-child(3) .F_cont ul {
+        border-right: none;
+      }
+
+      /* 피그마 : 로그인 */
+      .F_cont ul {
+        border-right: 0.5px solid #ededed;
+        padding: 0 25px;
+      }
+
+      .F_cont h2 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: left;
+        padding: 0 25px;
+        border-left: 2px solid #285A5B;
+      }
+      .F_cont ul {
+        text-align: left;
+        font-size: 20px;
+        margin-bottom: 60px;
+      }
+      .F_cont ul:last-child {
+        margin-bottom: 0px;
+      }
+      .F_cont ul li {
+        /* border-bottom: Dashed 1px #ededed; */
+        padding: 15px 0;
+      }
+      .F_cont ul li a {
+        font-weight: normal;
+        font-size: 18px;
+      }
+      .F_cont ul li:hover {
+        text-decoration: underline;
+        text-underline-position: unset;
+        text-underline-offset: 10px;
+        border-radius: 50px;
+        padding: 15px 0px 15px 51px;
+        transition: 0.25s;
+      }
+      .F_cont ul li:hover a {
+        color: #000000;
+        font-size: 22px;
+      }
+      .F_cont ul li:not(:hover) {
+        transition: 0.25s;
+      }
+    </style>
+  </head>
+  <body class="AllTopDown">
+    <h2 style="text-align: center; font-size: 50px; margin-bottom: 70px;">
+      4조 INDEX 분리의 神
+    </h2>
+    <span class="notion"><a href="https://www.notion.so/4-e3f0f34702104c7bac314c86bbfe0563?pvs=4" target="_blank">notion</a></span>
+    <div class="wrap">
+      <div class="figma">
+        <a href="https://www.figma.com/file/dskoSl2FLh1cI2Z1fj7TUU/%EC%8A%B9%EC%9A%B0?type=design&node-id=74-9099&mode=design&t=vFK5ESxCEiH5Mqun-4" target="_blank">
+        <h2 class="wrap__title">Figma</h2></a>
+        <div class="F_cont">
+          <h2>메인•로그인•회원가입</h2>
+          <ul class="F_login">
+            <li>
+                <a href="https://www.figma.com/file/dskoSl2FLh1cI2Z1fj7TUU/%EC%8A%B9%EC%9A%B0?type=design&node-id=74-9099&mode=design&t=vFK5ESxCEiH5Mqun-4" target="_blank">메인</a>
+            </li>
+            <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design" target="_blank">01. 아이디 찾기</a>
+            </li>
+            <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design" target="_blank">02. 비밀번호 찾기</a>
+            </li>
+            <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design" target="_blank">03. 아이디 찾기 완료</a>
+            </li>
+            <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design" target="_blank">04. 비밀번호 찾기 완료</a>
+            </li>
+            <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design" target="_blank">05. 회원가입 정보 입력</a>
+            </li>
+          </ul>
+          <h2>게시판</h2>
+          <ul class="F_board">
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design" target="_blank">01. 공지사항 메인</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design" target="_blank">02. 공지사항 글쓰기</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design" target="_blank">03. 공지사항 수정</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design" target="_blank">04. 게시판 메인</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design" target="_blank">05.게시판 보기</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design" target="_blank">06. 게시판 글쓰기</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design" target="_blank">07. 게시판 수정 및 삭제</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design" target="_blank">08. 게시판 검색</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/dskoSl2FLh1cI2Z1fj7TUU/%EC%8A%B9%EC%9A%B0?type=design&node-id=72-747&mode=design" target="_blank">09. 탄소발자국</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/dskoSl2FLh1cI2Z1fj7TUU/%EC%8A%B9%EC%9A%B0?type=design&node-id=72-747&mode=design" target="_blank">10. 분리배출</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design" target="_blank">11. 만든사람들</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="html">
+        <a href="#" target="_blank"><h2 class="wrap__title">html</h2></a>
+        <div class="F_cont">
+            <h2>메인•로그인•회원가입</h2>
+          <ul class="F_login">
+            <li>
+                <a href="https://www.figma.com/file/dskoSl2FLh1cI2Z1fj7TUU/%EC%8A%B9%EC%9A%B0?type=design&node-id=74-9099&mode=design&t=vFK5ESxCEiH5Mqun-4">메인</a>
+            </li>
+            <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design">01. 아이디 찾기</a>
+            </li>
+            <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design">02. 비밀번호 찾기</a>
+            </li>
+            <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design">03. 아이디 찾기 완료</a>
+            </li>
+            <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design">04. 비밀번호 찾기 완료</a>
+            </li>
+            <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design">05. 회원가입 정보 입력</a>
+            </li>
+          </ul>
+          <h2>게시판</h2>
+          <ul class="F_board">
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">01. 공지사항 메인</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">02. 공지사항 글쓰기</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">03. 공지사항 수정</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">04. 게시판 메인</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">05.게시판 보기</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">06. 게시판 글쓰기</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">07. 게시판 수정 및 삭제</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">08. 게시판 검색</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/dskoSl2FLh1cI2Z1fj7TUU/%EC%8A%B9%EC%9A%B0?type=design&node-id=72-747&mode=design">09. 탄소발자국</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/dskoSl2FLh1cI2Z1fj7TUU/%EC%8A%B9%EC%9A%B0?type=design&node-id=72-747&mode=design">10. 분리배출</a>
+            </li>
+            <li>
+              <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">11. 만든사람들</a>
+            </li>
+            </ul>
+        </div>
+      </div>
+      <div class="php">
+        <a href="#" target="_blank"><h2 class="wrap__title">PHP</h2></a>
+        <div class="F_cont">
+            <h2>메인•로그인•회원가입</h2>
+            <ul class="F_login">
+              <li>
+                  <a href="https://www.figma.com/file/dskoSl2FLh1cI2Z1fj7TUU/%EC%8A%B9%EC%9A%B0?type=design&node-id=74-9099&mode=design&t=vFK5ESxCEiH5Mqun-4">메인</a>
+              </li>
+              <li>
+                  <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design">01. 아이디 찾기</a>
+              </li>
+              <li>
+                  <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design">02. 비밀번호 찾기</a>
+              </li>
+              <li>
+                  <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design">03. 아이디 찾기 완료</a>
+              </li>
+              <li>
+                  <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design">04. 비밀번호 찾기 완료</a>
+              </li>
+              <li>
+                  <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=103-66&mode=design">05. 회원가입 정보 입력</a>
+              </li>
+            </ul>
+            <h2>게시판</h2>
+            <ul class="F_board">
+              <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">01. 공지사항 메인</a>
+              </li>
+              <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">02. 공지사항 글쓰기</a>
+              </li>
+              <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">03. 공지사항 수정</a>
+              </li>
+              <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">04. 게시판 메인</a>
+              </li>
+              <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">05.게시판 보기</a>
+              </li>
+              <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">06. 게시판 글쓰기</a>
+              </li>
+              <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">07. 게시판 수정 및 삭제</a>
+              </li>
+              <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">08. 게시판 검색</a>
+              </li>
+              <li>
+                <a href="https://www.figma.com/file/dskoSl2FLh1cI2Z1fj7TUU/%EC%8A%B9%EC%9A%B0?type=design&node-id=72-747&mode=design">09. 탄소발자국</a>
+              </li>
+              <li>
+                <a href="https://www.figma.com/file/dskoSl2FLh1cI2Z1fj7TUU/%EC%8A%B9%EC%9A%B0?type=design&node-id=72-747&mode=design">10. 분리배출</a>
+              </li>
+              <li>
+                <a href="https://www.figma.com/file/kQhvPz4C8lQq2gVF2OeFnK/%EB%AA%85%ED%9B%88?type=design&node-id=108-820&mode=design">11. 만든사람들</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
